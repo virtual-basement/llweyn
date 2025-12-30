@@ -2,112 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <title>❤️</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Rating Form</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3);
+            font-family: 'Segoe UI', sans-serif;
+            user-select: none;
+        }
+
+        #hint {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 15px;
+            animation: pulse 1.5s infinite;
+        }
+
+        #message {
+            font-size: 2.5rem;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            text-align: center;
+        }
+
+        .show {
+            opacity: 1;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.4; }
+            50% { opacity: 1; }
+            100% { opacity: 0.4; }
+        }
+    </style>
 </head>
 <body>
-    <h1>Rate "behh" of our basementic bodies</h1>
-    
-        <div class="product">
-            <label for="product1">Mojo..jo_jo:</label>
-            <input type="radio" id="product1-1" name="product1" value="1"> 1
-            <input type="radio" id="product1-2" name="product1" value="2"> 2
-            <input type="radio" id="product1-3" name="product1" value="3"> 3
-            <input type="radio" id="product1-4" name="product1" value="4"> 4
-            <input type="radio" id="product1-5" name="product1" value="5"> 5
-        </div>
-        <div class="product">
-<label for="product2">Rayhan77:</label>
-<input type="radio" id="product2-1" name="product2" value="1"> 1
-<input type="radio" id="product2-2" name="product2" value="2"> 2
-<input type="radio" id="product2-3" name="product2" value="3"> 3
-<input type="radio" id="product2-4" name="product2" value="4"> 4
-<input type="radio" id="product2-5" name="product2" value="5"> 5
-</div>
 
-<div class="product">
-<label for="product2">Judy:</label>
-<input type="radio" id="product2-1" name="product2" value="1"> 1
-<input type="radio" id="product2-2" name="product2" value="2"> 2
-<input type="radio" id="product2-3" name="product2" value="3"> 3
-<input type="radio" id="product2-4" name="product2" value="4"> 4
-<input type="radio" id="product2-5" name="product2" value="5"> 5
-</div>
+    <div id="hint">Touch the screen for the information </div>
+    <div id="message">I love you Nilima ❤️</div>
 
-<div class="product">
-<label for="product2">Willow Lane:</label>
-<input type="radio" id="product2-1" name="product2" value="1"> 1
-<input type="radio" id="product2-2" name="product2" value="2"> 2
-<input type="radio" id="product2-3" name="product2" value="3"> 3
-<input type="radio" id="product2-4" name="product2" value="4"> 4
-<input type="radio" id="product2-5" name="product2" value="5"> 5
-</div>
+    <script>
+        const message = document.getElementById("message");
+        const hint = document.getElementById("hint");
+        let firstTouch = true;
 
-<div class="product">
-<label for="product2">Siam:</label>
-<input type="radio" id="product2-1" name="product2" value="1"> 1
-<input type="radio" id="product2-2" name="product2" value="2"> 2
-<input type="radio" id="product2-3" name="product2" value="3"> 3
-<input type="radio" id="product2-4" name="product2" value="4"> 4
-<input type="radio" id="product2-5" name="product2" value="5"> 5
-</div>
+        function showLove() {
+            message.classList.add("show");
 
-<div class="product">
-            <label for="product2">High On Something:</label>
-            <input type="radio" id="product2-1" name="product2" value="1"> 1
-            <input type="radio" id="product2-2" name="product2" value="2"> 2
-            <input type="radio" id="product2-3" name="product2" value="3"> 3
-            <input type="radio" id="product2-4" name="product2" value="4"> 4
-            <input type="radio" id="product2-5" name="product2" value="5"> 5
-        </div> 
-<div class="product">
-<label for="product2">Furawazu:</label>
-<input type="radio" id="product2-1" name="product2" value="1"> 1
-<input type="radio" id="product2-2" name="product2" value="2"> 2
-<input type="radio" id="product2-3" name="product2" value="3"> 3
-<input type="radio" id="product2-4" name="product2" value="4"> 4
-<input type="radio" id="product2-5" name="product2" value="5"> 5
-</div>
+            // Vibration
+            if (navigator.vibrate) {
+                navigator.vibrate(150);
+            }
 
-<div class="product">
-<label for="product2">Rothi:</label>
-<input type="radio" id="product2-1" name="product2" value="1"> 1
-<input type="radio" id="product2-2" name="product2" value="2"> 2
-<input type="radio" id="product2-3" name="product2" value="3"> 3
-<input type="radio" id="product2-4" name="product2" value="4"> 4
-<input type="radio" id="product2-5" name="product2" value="5"> 5
-</div>
+            // Remove hint after first interaction
+            if (firstTouch) {
+                hint.style.display = "none";
+                firstTouch = false;
+            }
 
-<div class="product">
-<label for="product2">Nabila:</label>
-<input type="radio" id="product2-1" name="product2" value="1"> 1
-<input type="radio" id="product2-2" name="product2" value="2"> 2
-<input type="radio" id="product2-3" name="product2" value="3"> 3
-<input type="radio" id="product2-4" name="product2" value="4"> 4
-<input type="radio" id="product2-5" name="product2" value="5"> 5
-</div>
+            setTimeout(() => {
+                message.classList.remove("show");
+            }, 2000);
+        }
 
-<div class="product">
-<label for="product2">Levi:</label>
-<input type="radio" id="product2-1" name="product2" value="1"> 1
-<input type="radio" id="product2-2" name="product2" value="2"> 2
-<input type="radio" id="product2-3" name="product2" value="3"> 3
-<input type="radio" id="product2-4" name="product2" value="4"> 4
-<input type="radio" id="product2-5" name="product2" value="5"> 5
-</div>
+        document.addEventListener("touchstart", showLove);
+        document.addEventListener("click", showLove);
+    </script>
 
-<div class="product">
-<label for="product2">Taha:</label>
-<input type="radio" id="product2-1" name="product2" value="1"> 1
-<input type="radio" id="product2-2" name="product2" value="2"> 2
-<input type="radio" id="product2-3" name="product2" value="3"> 3
-<input type="radio" id="product2-4" name="product2" value="4"> 4
-<input type="radio" id="product2-5" name="product2" value="5"> 5
-</div>
-
-
-        <button> <a href="https://youtu.be/dQw4w9WgXcQ?si=DH_2nPFeGzl5fQ2i" target="_blank" > Submit </a> </button>
-   
 </body>
 </html>
